@@ -32,7 +32,7 @@ public class Task_SendMetrics extends BukkitRunnable {
 		MackerelAPI mackerelAPI = Main.getMackerelAPI();
 
 		List<Metric> metrics = new ArrayList<>();
-		metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.playerCount", playerCount, time));
+		metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.player.count", playerCount, time));
 
 		metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.tps.1min", tps1m, time));
 		metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.tps.5min", tps5m, time));
