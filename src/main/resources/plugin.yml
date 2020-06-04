@@ -1,0 +1,6 @@
+name: ${project.artifactId}
+main: com.jaoafa.MackerelSpigotWatcher.Main
+version: 2020.06.04_22.17
+description: Send information to Mackerel.
+database: true
+author: mine_book000
