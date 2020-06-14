@@ -41,12 +41,17 @@
   - `custom.msw.log.fine`: ログレベル「`FINE`」のログ数
   - `custom.msw.log.finest`: ログレベル「`FINEST`」のログ数
   - `custom.msw.log.error`: ログレベル「`ERROR`」のログ数
+  - `custom.msw.log.debug`: ログレベル「`DEBUG`」のログ数 (0.0.4で追加)
 - `custom.msw.logsize`: ログファイル(`./logs/latest.log`)サイズ
 - `custom.msw.memory.*`: Bukkit/Spigot(java Runtime)に割り当てられている RAM に関するメトリック (参考: [Runtime クラスの Javadoc](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Runtime.html))
   - `custom.msw.memory.free`: 使用されていないメモリサイズ
   - `custom.msw.memory.used`: 使用しているメモリサイズ
   - `custom.msw.memory.total`: 割り当てられているメモリサイズ
   - `custom.msw.memory.max`: 使用を試みるメモリサイズ
+- `custom.msw.world_*.*`: Bukkit/Spigotで動作しているワールド情報 (0.0.3で追加)
+  - `custom.msw.world_loadedchunk.WORLD`: ワールドでロードされているチャンク数
+  - `custom.msw.world_entitys.WORLD`: ワールドのエンティティ数
+  - `custom.msw.world_tileentitys.WORLD`: ワールドのタイルエンティティ数
 
 ## ライセンス
 

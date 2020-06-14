@@ -41,12 +41,17 @@ Bukkit / Spigot plugin that send the following server information to [Mackerel](
   - `custom.msw.log.fine`: Number of logs of log level `FINE`
   - `custom.msw.log.finest`: Number of logs at log level `FINEST`
   - `custom.msw.log.error`: Number of logs of log level `ERROR`
+  - `custom.msw.log.debug`: Number of logs of log level `DEBUG` (Added in 0.0.4)
 - `custom.msw.logsize`: Log file (`./logs/latest.log`) size
 - `custom.msw.memory.*`: Metrics for RAM allocated to Bukkit/Spigot (java Runtime) (Reference: [Javadoc of Runtime class](https://docs.oracle.com/javase/8/docs/api/java/lang/Runtime.html))
   - `custom.msw.memory.free`: Free memory size
   - `custom.msw.memory.used`: Used memory size
   - `custom.msw.memory.total`: Allocated memory size
   - `custom.msw.memory.max`: Memory size to try use
+- `custom.msw.world_*.*`: World information running on Bukkit/Spigot (Added in 0.0.3)
+  - `custom.msw.world_loadedchunk.WORLD`: Number of chunks loaded in the world
+  - `custom.msw.world_entitys.WORLD`: Number of entities in the world
+  - `custom.msw.world_tileentitys.WORLD`: Number of tile entities in the world
 
 ## License
 
