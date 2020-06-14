@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Chunk;
+import org.bukkit.World;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import com.jaoafa.MackerelSpigotWatcher.Main;
@@ -53,6 +55,24 @@ public class Task_SendMetrics extends BukkitRunnable {
 		metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.memory.used", used, time));
 		metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.memory.total", total, time));
 		metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.memory.max", max, time));
+
+		for (World world : Bukkit.getServer().getWorlds()) {
+			int tileEntities = 0;
+
+			try {
+				for (Chunk chunk : world.getLoadedChunks()) {
+					tileEntities += chunk.getTileEntities().length;
+				}
+				metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.world_loadedchunk." + world.getName(),
+						world.getLoadedChunks().length, time));
+				metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.world_entitys." + world.getName(),
+						world.getEntities().size(), time));
+				metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.world_tileentitys." + world.getName(),
+						tileEntities, time));
+			} catch (ClassCastException ex) {
+				continue;
+			}
+		}
 
 		if (!mackerelAPI.postMetrics(metrics)) {
 			Main.getJavaPlugin().getLogger().warning("postMetrics failed.");
