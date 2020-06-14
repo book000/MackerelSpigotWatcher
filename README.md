@@ -29,6 +29,7 @@ Bukkit / Spigot plugin that send the following server information to [Mackerel](
 
 - `custom.msw.player.*`: Metrics for Player
   - `custom.msw.player.count`: Number of online players
+  - `custom.msw.player.WORLD`: Number of online players per world (Added in 0.0.5)
 - `custom.msw.tps.*`: Metrics for TPS
   - `custom.msw.tps.1min`: TPS per minute
   - `custom.msw.tps.5min`: TPS per 5 minutes

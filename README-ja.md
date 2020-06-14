@@ -29,6 +29,7 @@
 
 - `custom.msw.player.*`: プレイヤーに関するメトリック
   - `custom.msw.player.count`: オンラインプレイヤー数
+  - `custom.msw.player.WORLD`: ワールドあたりのオンラインプレイヤー数 (0.0.5で追加)
 - `custom.msw.tps.*`: TPS に関するメトリック
   - `custom.msw.tps.1min`: 1 分当たりの TPS
   - `custom.msw.tps.5min`: 5 分当たりの TPS
