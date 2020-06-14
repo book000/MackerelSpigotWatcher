@@ -16,6 +16,7 @@ public class ParseLogFile {
 	long finerCount = 0;
 	long finestCount = 0;
 	long errorCount = 0;
+	long debugCount = 0;
 
 	public ParseLogFile() {
 		File latestLogFile = new File("./logs/latest.log");
@@ -33,6 +34,7 @@ public class ParseLogFile {
 			finerCount = lines.stream().filter(line -> line != null && line.contains("/FINER]:")).count();
 			finestCount = lines.stream().filter(line -> line != null && line.contains("/FINEST]:")).count();
 			errorCount = lines.stream().filter(line -> line != null && line.contains("/ERROR]:")).count();
+			debugCount = lines.stream().filter(line -> line != null && line.contains("/DEBUG]:")).count();
 		} catch (IOException e) {
 			return;
 		}
@@ -72,5 +74,9 @@ public class ParseLogFile {
 
 	public long getErrorCount() {
 		return errorCount;
+	}
+
+	public long getDebugCount() {
+		return debugCount;
 	}
 }

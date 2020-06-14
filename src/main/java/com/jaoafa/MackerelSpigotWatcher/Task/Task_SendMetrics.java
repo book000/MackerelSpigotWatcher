@@ -48,6 +48,7 @@ public class Task_SendMetrics extends BukkitRunnable {
 		metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.log.finer", plf.getFinerCount(), time));
 		metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.log.finest", plf.getFinestCount(), time));
 		metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.log.error", plf.getErrorCount(), time));
+		metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.log.debug", plf.getDebugCount(), time));
 
 		metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.logsize", logSize, time));
 
