@@ -62,7 +62,11 @@ public class Task_SendMetrics extends BukkitRunnable {
 
 			try {
 				for (Chunk chunk : world.getLoadedChunks()) {
-					tileEntities += chunk.getTileEntities().length;
+					try {
+						tileEntities += chunk.getTileEntities().length;
+					} catch (IllegalStateException e) {
+						continue;
+					}
 				}
 				metrics.add(new MackerelAPI.Metric(mackerelAPI, "custom.msw.player." + world.getName(),
 						world.getPlayers().size(), time));
