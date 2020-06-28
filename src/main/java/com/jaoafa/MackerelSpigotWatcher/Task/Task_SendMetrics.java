@@ -79,6 +79,8 @@ public class Task_SendMetrics extends BukkitRunnable {
 						tileEntities, time));
 			} catch (ClassCastException ex) {
 				continue;
+			} catch (NullPointerException ex) {
+				continue;
 			}
 		}
 
