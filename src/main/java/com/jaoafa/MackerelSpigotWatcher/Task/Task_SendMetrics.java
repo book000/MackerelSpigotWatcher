@@ -64,7 +64,10 @@ public class Task_SendMetrics extends BukkitRunnable {
 				for (Chunk chunk : world.getLoadedChunks()) {
 					try {
 						tileEntities += chunk.getTileEntities().length;
-					} catch (IllegalStateException e) {
+					} catch (Exception e) {
+						Main.getJavaPlugin().getLogger().warning(
+								"[Task_SendMetrics] " + e.getClass().getName() + ": " + chunk.getWorld().getName() + " "
+										+ chunk.getX() + " " + chunk.getZ());
 						continue;
 					}
 				}
