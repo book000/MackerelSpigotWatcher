@@ -113,7 +113,7 @@ public final class Main extends JavaPlugin {
             return;
         }
 
-        new Task_SendMetrics().runTaskTimerAsynchronously(this, 0L, 1200L); // every 1 min
+        new Task_SendMetrics().runTaskTimer(this, 0L, 1200L); // every 1 min
     }
 
     public static JavaPlugin getJavaPlugin() {
