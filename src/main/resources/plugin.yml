@@ -1,6 +1,7 @@
-name: ${project.artifactId}
-main: com.jaoafa.MackerelSpigotWatcher.Main
-version: 2020.07.05_18.48
+name: MackerelSpigotWatcher
+version: ${project.version}
 description: Send information to Mackerel.
-database: true
-author: mine_book000
+main: com.tomacheese.mackerelspigotwatcher.Main
+api-version: 1.16
+authors: [ mine_book000 ]
+website: https://www.spigotmc.org/resources/mackerelspigotwatcher.81651/

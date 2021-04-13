@@ -2,7 +2,7 @@
 
 [日本語の README はこちらから](https://github.com/jaoafa/MackerelSpigotWatcher/blob/master/README-ja.md)
 
-Bukkit / Spigot plugin that send the following server information to [Mackerel](https://mackerel.io/).
+PaperMC plugin that send the following server information to [Mackerel](https://mackerel.io/).
 
 - Number of online players
 - TPS value per 1 minute, 5 minutes, 15 minutes

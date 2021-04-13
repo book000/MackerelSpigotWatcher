@@ -2,7 +2,7 @@
 
 [Click here for English README](https://github.com/jaoafa/MackerelSpigotWatcher/blob/master/README.md)
 
-[Mackerel](https://mackerel.io/) へ以下のサーバ情報を投げる Bukkit / Spigot プラグインです。
+[Mackerel](https://mackerel.io/) へ以下のサーバ情報を投げる PaperMC プラグインです。
 
 - オンラインプレイヤー数
 - 1 分・5 分・15 分あたりの TPS 値
