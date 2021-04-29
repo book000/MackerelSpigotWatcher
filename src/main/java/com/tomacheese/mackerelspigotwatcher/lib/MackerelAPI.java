@@ -48,12 +48,7 @@ public class MackerelAPI {
                 array.put(obj);
             }
             final MediaType mediaTypeJson = MediaType.parse("application/json; charset=utf-8");
-            RequestBody requestBody;
-            try {
-                requestBody = RequestBody.create(array.toString(), mediaTypeJson);
-            } catch (NoSuchMethodError e) {
-                requestBody = RequestBody.create(mediaTypeJson, array.toString());
-            }
+            RequestBody requestBody = RequestBody.create(mediaTypeJson, array.toString());
 
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()
