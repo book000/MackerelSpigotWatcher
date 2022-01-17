@@ -12,7 +12,6 @@ import java.nio.file.Files;
 import java.util.Objects;
 
 public final class Main extends JavaPlugin {
-
     private static JavaPlugin JavaPlugin;
     private static MackerelAPI MackerelAPI;
 
@@ -63,7 +62,7 @@ public final class Main extends JavaPlugin {
             return;
         }
         if (!mackerelHostIdFile.canRead()) {
-            // cant read
+            // can't read
             getLogger().warning("Could not get Mackerel HostId. You do not have read permission for the id file.");
             getLogger().warning("Disable the plugin.");
             getServer().getPluginManager().disablePlugin(this);
@@ -81,7 +80,7 @@ public final class Main extends JavaPlugin {
 
         MackerelAPI = new MackerelAPI(mackerelAPIKey, mackerelHostId);
         try {
-            JSONObject json = MackerelAPI.getHostInfomation();
+            JSONObject json = MackerelAPI.getHostInformation();
             if (json == null) {
                 getLogger().warning("Could not get Mackerel Host Infomation.");
                 getLogger().warning("Disable the plugin.");

@@ -39,10 +39,6 @@ public class ParseLogFile {
         }
 	}
 
-	public boolean isFileExists() {
-		return fileExists;
-	}
-
 	public long getSevereCount() {
 		return severeCount;
 	}

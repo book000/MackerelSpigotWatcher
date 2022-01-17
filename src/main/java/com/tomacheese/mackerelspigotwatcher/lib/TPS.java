@@ -59,9 +59,9 @@ public class TPS {
 	private static Object serverInstance;
 	private static Field tpsField;
 
-	private static Class<?> getNMSClass(String className) {
+	private static Class<?> getNMSClass() {
 		try {
-			return Class.forName("net.minecraft.server." + version + "." + className);
+			return Class.forName("net.minecraft.server.%s.MinecraftServer".formatted(version));
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		}
@@ -69,7 +69,7 @@ public class TPS {
 
 	public static void OnEnable_TPSSetting() {
 		try {
-			serverInstance = getNMSClass("MinecraftServer").getMethod("getServer").invoke(null);
+			serverInstance = getNMSClass().getMethod("getServer").invoke(null);
 			tpsField = serverInstance.getClass().getField("recentTps");
 			firstSetting = true;
 		} catch (NoSuchFieldException | SecurityException | IllegalAccessException | IllegalArgumentException

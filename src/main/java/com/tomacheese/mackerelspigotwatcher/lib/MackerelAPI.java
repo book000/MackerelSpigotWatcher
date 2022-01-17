@@ -17,7 +17,7 @@ public class MackerelAPI {
         this.hostId = hostId;
     }
 
-    public JSONObject getHostInfomation() throws IOException {
+    public JSONObject getHostInformation() throws IOException {
         String url = baseUrl + "hosts/" + hostId;
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
@@ -48,7 +48,7 @@ public class MackerelAPI {
                 array.put(obj);
             }
             final MediaType mediaTypeJson = MediaType.parse("application/json; charset=utf-8");
-            RequestBody requestBody = RequestBody.create(mediaTypeJson, array.toString());
+            RequestBody requestBody = RequestBody.create(array.toString(), mediaTypeJson);
 
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()
@@ -75,11 +75,11 @@ public class MackerelAPI {
     }
 
     public static class Metric {
-        MackerelAPI mackerelAPI;
-        String hostId;
-        String name;
-        double value;
-        long time;
+        final MackerelAPI mackerelAPI;
+        final String hostId;
+        final String name;
+        final double value;
+        final long time;
 
         public Metric(MackerelAPI mackerelAPI, String name, String value, long time) {
             this.mackerelAPI = mackerelAPI;
@@ -113,20 +113,8 @@ public class MackerelAPI {
             this.time = time;
         }
 
-        public String getHostId() {
-            return hostId;
-        }
-
         public String getName() {
             return name;
-        }
-
-        public double getValue() {
-            return value;
-        }
-
-        public long getTime() {
-            return time;
         }
     }
 }
