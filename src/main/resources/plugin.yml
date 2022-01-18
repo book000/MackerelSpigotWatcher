@@ -2,6 +2,6 @@ name: MackerelSpigotWatcher
 version: ${project.version}
 description: Send information to Mackerel.
 main: com.tomacheese.mackerelspigotwatcher.Main
-api-version: 1.18.1
+api-version: 1.18
 authors: [ mine_book000 ]
 website: https://www.spigotmc.org/resources/mackerelspigotwatcher.81651/
