@@ -65,11 +65,22 @@ jobs:
           release_name: Release ${{ steps.tag_version.outputs.new_tag }}
           body: ${{ steps.tag_version.outputs.changelog }}
 
-      - name: Upload Release Asset
+      - name: Upload Release Asset *.jar
         uses: shogo82148/actions-upload-release-asset@v1.5.0
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: target/*.jar
+
+      - name: Calculate hash
+        working-directory: ./target
+        run: |
+          sha256sum *.jar > sha256sum.txt
+
+      - name: Upload Release Asset sha256sum.txt
+        uses: shogo82148/actions-upload-release-asset@v1.5.0
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: target/sha256sum.txt
 
       - name: Released comment
         uses: actions/github-script@v5
